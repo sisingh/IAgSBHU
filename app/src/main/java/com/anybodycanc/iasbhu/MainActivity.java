@@ -124,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
                 .into(imgNavHeaderBg);
 
         // Loading profile image
-
         Glide.with(this)
                 .load(getImage("madanmohan"))
                 .crossFade()
