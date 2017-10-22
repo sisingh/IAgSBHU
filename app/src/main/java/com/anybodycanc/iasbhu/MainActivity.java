@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     // urls to load navigation header background image
     // and profile image
-    private static final String urlNavHeaderBg = "https://api.androidhive.info/images/nav-menu-header-bg.jpg";
-    private static final String urlProfileImg = "https://lh3.googleusercontent.com/eCtE_G34M9ygdkmOpYvCag1vBARCmZwnVS6rS5t4JLzJ6QgQSBquM0nuTsCpLhYbKljoyS-txg";
+    private static final String urlNavHeaderBg = null;
+    private static final String urlProfileImg = null;
 
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -102,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private int getImage(String imageName) {
+        int drawableResourceId = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
+        return drawableResourceId;
+    }
     /***
      * Load navigation menu header information
      * like background image, profile image
@@ -110,16 +114,19 @@ public class MainActivity extends AppCompatActivity {
     private void loadNavHeader() {
         // name, website
         txtName.setText("I.Ag.Sc - B.H.U");
-        txtWebsite.setText("www.anybodycanc.com");
+        txtWebsite.setText("http://www.iagscbhu.in/");
 
         // loading header background image
-//        Glide.with(this).load(urlNavHeaderBg)
-//                .crossFade()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(imgNavHeaderBg);
+        Glide.with(this)
+                .load(getImage("bhu_agri"))
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imgNavHeaderBg);
 
         // Loading profile image
-        Glide.with(this).load(urlProfileImg)
+
+        Glide.with(this)
+                .load(getImage("madanmohan"))
                 .crossFade()
                 .thumbnail(0.5f)
                 .bitmapTransform(new CircleTransform(this))
