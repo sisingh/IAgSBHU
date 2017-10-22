@@ -113,10 +113,10 @@ public class MainActivity extends AppCompatActivity {
         txtWebsite.setText("www.anybodycanc.com");
 
         // loading header background image
-        Glide.with(this).load(urlNavHeaderBg)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgNavHeaderBg);
+//        Glide.with(this).load(urlNavHeaderBg)
+//                .crossFade()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .into(imgNavHeaderBg);
 
         // Loading profile image
         Glide.with(this).load(urlProfileImg)
